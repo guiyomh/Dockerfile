@@ -1,0 +1,5 @@
+
+gossfile:
+  ./spec/composer.yaml: {}
+  ./spec/php-tools.yaml: {}
+  ./spec/php.yaml: {}

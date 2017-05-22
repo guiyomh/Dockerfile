@@ -1,0 +1,285 @@
+file:
+  /usr/local/etc/php/php.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - memory_limit = 512M
+    - expose_php = Off
+    - allow_url_include = Off
+    - opcache.max_accelerated_files = 20000
+    - opcache.interned_strings_buffer = 16
+    - opcache.memory_consumption = 256
+    - opcache.fast_shutdown = 1
+    - apc.enable_cli = 1
+    - date.timezone = UTC
+    - session.auto_start = Off
+    - short_open_tag = Off
+    - realpath_cache_size = 4096K
+    - realpath_cache_ttl = 600
+  /provision/template/www.conf.tmpl:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/bin/docker-php-entrypoint:
+    exists: true
+    mode: "0775"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/bin/docker-php-ext-enable:
+    exists: true
+    mode: "0775"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/20-apcu.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - extension=apcu.so
+  /usr/local/etc/php/conf.d/30-redis.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - extension=redis.so
+  /usr/local/etc/php/conf.d/40-mongodb.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains:
+    - extension=mongodb.so
+  /usr/local/etc/php/conf.d/docker-php-ext-bcmath.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-bz2.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-calendar.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-intl.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-soap.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-sockets.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-xsl.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-zip.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+    contains: []
+  /usr/local/etc/php/conf.d/docker-php-ext-ldap.ini:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+command:
+  php -i:
+    exit-status: 0
+    stdout:
+    - \/usr/local/etc/php/conf.d/30-redis.ini,
+    - \/usr/local/etc/php/conf.d/40-mongodb.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-bcmath.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-bz2.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-calendar.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-intl.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-soap.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-sockets.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-xsl.ini,
+    - \/usr/local/etc/php/conf.d/docker-php-ext-zip.ini
+    - APCu Support => Enabled
+    - apc.enable_cli => On => On
+    - apc.enabled => On => On
+    - BCMath support => enabled
+    - BZip2 Support => Enabled
+    - Calendar support => enabled
+    - allow_url_fopen => On => On
+    - allow_url_include => Off => Off
+    - default_charset => UTF-8 => UTF-8
+    - expose_php => Off => Off
+    - html_errors => Off => Off
+    - log_errors => Off => Off
+    - memory_limit => 512M => 512M
+    - post_max_size => 8M => 8M
+    - precision => 14 => 14
+    - realpath_cache_size => 4096K => 4096K
+    - realpath_cache_ttl => 600 => 600
+    - short_open_tag => Off => Off
+    - date/time support => enabled
+    - Default timezone => UTC
+    - date.timezone => UTC => UTC
+    - DOM/XML => enabled
+    - HTML Support => enabled
+    - XPath Support => enabled
+    - XPointer Support => enabled
+    - Schema Support => enabled
+    - RelaxNG Support => enabled
+    - fileinfo support => enabled
+    - Input Validation and Filtering => enabled
+    - FTP support => enabled
+    - FTPS support => enabled
+    - hash support => enabled
+    - iconv support => enabled
+    - Internationalization support => enabled
+    - json support => enabled
+    - LDAP Support => enabled
+    - libXML support => active
+    - libXML streams => enabled
+    - Multibyte Support => enabled
+    - MongoDB support => enabled
+    - mysqlnd => enabled
+    - OpenSSL support => enabled
+    - PCRE (Perl Compatible Regular Expressions) Support => enabled
+    - PDO support => enabled
+    - PDO drivers => sqlite, mysql
+    - PDO Driver for MySQL => enabled
+    - PDO Driver for SQLite 3.x => enabled
+    - SQLite Library
+    - Redis Support => enabled
+    - Redis Version
+    - Reflection => enabled
+    - Session Support => enabled
+    - Simplexml support => enabled
+    - Soap Client => enabled
+    - Soap Server => enabled
+    - Sockets Support => enabled
+    - SPL support => enabled
+    - SQLite3 support => enabled
+    - Tokenizer Support => enabled
+    - XML Support => active
+    - XMLReader => enabled
+    - XMLWriter => enabled
+    - XSL => enabled
+    - opcache.enable => On => On
+    - opcache.interned_strings_buffer => 16 => 16
+    - opcache.max_accelerated_files => 20000 => 20000
+    - opcache.memory_consumption => 256 => 256
+    - Zip => enabled
+    - ZLib Support => enabled
+    - amqp
+    stderr: []
+    timeout: 10000
+  php -m:
+    exit-status: 0
+    stdout:
+    - apcu
+    - amqp
+    - bcmath
+    - bz2
+    - calendar
+    - Core
+    - ctype
+    - curl
+    - date
+    - dom
+    - fileinfo
+    - filter
+    - ftp
+    - hash
+    - iconv
+    - intl
+    - json
+    - ldap
+    - libxml
+    - mbstring
+    - mongodb
+    - mysqlnd
+    - openssl
+    - pcre
+    - PDO
+    - pdo_mysql
+    - pdo_sqlite
+    - Phar
+    - posix
+    - readline
+    - redis
+    - Reflection
+    - session
+    - SimpleXML
+    - soap
+    - sockets
+    - SPL
+    - sqlite3
+    - standard
+    - tokenizer
+    - xml
+    - xmlreader
+    - xmlwriter
+    - xsl
+    - Zend OPcache
+    - zip
+    - zlib
+    - Zend OPcache
+    stderr: []
+    timeout: 10000

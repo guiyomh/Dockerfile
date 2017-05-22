@@ -1,0 +1,4 @@
+gossfile:
+  ./spec/immortal.yaml: {}
+  ./spec/php.yaml: {}
+  ./spec/php-fpm.yaml: {}

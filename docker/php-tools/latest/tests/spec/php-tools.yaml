@@ -1,0 +1,80 @@
+file:
+  /tmp/vendor/bin/pdepend:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../pdepend/pdepend/src/bin/pdepend
+    filetype: symlink
+  /tmp/vendor/bin/php-cs-fixer:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../friendsofphp/php-cs-fixer/php-cs-fixer
+    filetype: symlink
+  /tmp/vendor/bin/phpcpd:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../sebastian/phpcpd/phpcpd
+    filetype: symlink
+  /tmp/vendor/bin/phploc:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../phploc/phploc/phploc
+    filetype: symlink
+  /tmp/vendor/bin/phpmd:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../phpmd/phpmd/src/bin/phpmd
+    filetype: symlink
+  /tmp/vendor/bin/phpmetrics:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../phpmetrics/phpmetrics/bin/phpmetrics
+    filetype: symlink
+  /tmp/vendor/bin/phpstan:
+    exists: true
+    mode: "0777"
+    owner: root
+    group: root
+    linked-to: ../phpstan/phpstan/bin/phpstan
+    filetype: symlink
+  /tmp/vendor/pdepend/pdepend:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+  /tmp/vendor/phploc/phploc:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+  /tmp/vendor/phpmd/phpmd:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+  /tmp/vendor/phpmetrics/phpmetrics:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+  /tmp/vendor/phpstan/phpstan:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory

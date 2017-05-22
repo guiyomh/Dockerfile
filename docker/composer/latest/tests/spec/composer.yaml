@@ -1,0 +1,36 @@
+file:
+  /tmp/composer.json:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: 
+    - '"hirak/prestissimo":'
+  /tmp/composer.lock:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+    contains: 
+    - '"name": "hirak/prestissimo"'
+  /tmp/vendor/composer:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+    contains: []
+  /tmp/vendor/hirak/prestissimo:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: directory
+  /usr/bin/composer:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file

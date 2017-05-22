@@ -1,0 +1,37 @@
+file:
+  /usr/local/bin/immortal:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file
+  /usr/local/bin/immortalctl:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file
+  /usr/local/bin/immortaldir:
+    exists: true
+    mode: "0755"
+    owner: root
+    group: root
+    filetype: file
+  /usr/local/share/man/man8/immortal.8:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+  /usr/local/share/man/man8/immortalctl.8:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file
+  /usr/local/share/man/man8/immortaldir.8:
+    exists: true
+    mode: "0644"
+    owner: root
+    group: root
+    filetype: file

@@ -1,0 +1,9 @@
+cmd: docker-php-fpm.sh
+cwd: /usr/local/bin/
+# log:
+#     file: /var/log/docker-php-fpm.log
+#     age: 86400  # seconds
+#     num: 7   # int
+#     size: 1  # MegaBytes
+wait: 0
+retry: 10

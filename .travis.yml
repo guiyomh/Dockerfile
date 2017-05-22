@@ -1,0 +1,57 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - umask 022
+  - chmod -R go-w $TRAVIS_BUILD_DIR
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+  - docker --version
+
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::8}
+    - DOCKER_REPOSITORY=infogene
+
+stage:
+  - base
+  - php
+  - tools
+
+jobs:
+  include:
+    - stage: base
+      script: ./bin/build.sh -t immortal -n
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push guiyomh/base;
+          fi
+    - stage: base
+      script: ./bin/build.sh -t composer -n
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push guiyomh/composer;
+          fi
+    
+    - stage: php
+      script: ./bin/build.sh -t php7.2 -n
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push guiyomh/php:latest;
+          docker push guiyomh/php:7.2;
+          fi
+
+    - stage: tools
+      script: ./bin/build.sh -t php-tools -n
+      after_success:
+        - if [ "$TRAVIS_BRANCH" == "master" ]; then
+          docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+          docker push guiyomh/php-tools;
+          fi
