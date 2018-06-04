@@ -18,6 +18,8 @@ COPY --from=composer /goss/spec/composer.yaml /goss/spec/composer.yaml
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_HOME=/tmp
 
+RUN apk add --no-cache git
+
 RUN composer self-update \
     && composer global require "friendsofphp/php-cs-fixer"  \
     && composer global require "phpmd/phpmd" \

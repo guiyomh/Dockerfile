@@ -78,3 +78,5 @@ file:
     owner: root
     group: root
     filetype: directory
+git:
+  installed: true
