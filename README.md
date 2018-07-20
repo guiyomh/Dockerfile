@@ -1,7 +1,7 @@
 Guiyomh Dockerfile
 ==================
-
-[![](https://travis-ci.org/Guiyomh/Dockerfile.svg?branch=master)](https://travis-ci.org/Guiyomh/Dockerfile "Show travis CI")
+[![](https://travis-ci.org/guiyomh/Dockerfile.svg?branch=master)](https://travis-ci.org/guiyomh/Dockerfile "Show travis CI")
+[![](https://travis-ci.org/guiyomh/Dockerfile.svg?branch=master)](https://travis-ci.org/guiyomh/Dockerfile "Show travis CI")
 
 The Dockerfile repository is reponsible for generating our Docker images on https://hub.docker.com/u/guiyomh/.
 
@@ -11,9 +11,9 @@ All Docker images are generated and tested by [Travis CI](https://travis-ci.org/
 
 | Image  | description                                    | Badge |
 |:------:|:-----------------------------------------------|:-----:|
-| Base   | A basic image to gather the common tools       | [![badge-base]](https://microbadger.com/images/infogene/base "Layers of infogene/base")|
-| Php    | A php-fpm tools with popular extension         |  [![badge-php]](https://microbadger.com/images/infogene/php "Layers of infogene/php") |
-| Composer | Extends composer Image with hirak/prestissimo  |  [![badge-composer]](https://microbadger.com/images/infogene/composer "Layers of infogene/composer") |
+| Php    | A php-fpm tools with popular extension         |  [![badge-php]](https://microbadger.com/images/guiyomh/php "Layers of guiyomh/php") |
+| Composer | Extends composer Image with hirak/prestissimo  |  [![badge-composer]](https://microbadger.com/images/guiyomh/composer "Layers of guiyomh/composer") |
+| Immortal | A *nix cross-platform (OS agnostic) supervisor  |  [![badge-immortal]](https://microbadger.com/images/guiyomh/immortal "Layers of guiyomh/immortal") |
 
 Building
 ========
@@ -22,8 +22,8 @@ Building
 | `make all`       | Build all the images                    |
 | `make php`       | Build the php images                    |
 | `make composer`  | Build the composer images               |
+| `make immortal`  | Build the immortal images               |
 
-[badge-base]: https://images.microbadger.com/badges/image/guiyomh/base.svg
 [badge-php]: https://images.microbadger.com/badges/image/guiyomh/php.svg
-[badge-php-oci]: https://images.microbadger.com/badges/image/guiyomh/php:7.1-oci.svg
 [badge-composer]: https://images.microbadger.com/badges/image/guiyomh/composer.svg
+[badge-immortal]: https://images.microbadger.com/badges/image/guiyomh/immortal.svg
